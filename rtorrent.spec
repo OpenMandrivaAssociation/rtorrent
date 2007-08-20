@@ -1,9 +1,9 @@
-%define libtorrentver 0.11.6
+%define libtorrentver 0.11.7
 %define release %mkrel 1
 #fixed2
 %{?!mkrel:%define mkrel(c:) %{-c: 0.%{-c*}.}%{!?_with_unstable:%(perl -e '$_="%{1}";m/(.\*\\D\+)?(\\d+)$/;$rel=${2}-1;re;print "$1$rel";').%{?subrel:%subrel}%{!?subrel:1}.%{?distversion:%distversion}%{?!distversion:%(echo $[%{mdkversion}/10])}}%{?_with_unstable:%{1}}%{?distsuffix:%distsuffix}%{?!distsuffix:mdk}}
 Name: rtorrent
-Version: 0.7.6
+Version: 0.7.7
 Release: %release
 Epoch: 1
 Summary: Curses based BitTorrent client
@@ -12,6 +12,7 @@ License: GPL
 Group: Networking/File transfer
 URL: http://libtorrent.rakshasa.no/
 Source0: http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.bz2 
+Patch: rtorrent-0.7.7-new-sigc++.patch
 Requires: libtorrent >= %libtorrentver
 BuildRequires: libtorrent-devel >= %libtorrentver
 BuildRequires: libcurl-devel >= 7.12.0
@@ -26,6 +27,7 @@ libtorrent.
 
 %prep
 %setup -q
+%patch -p1 -b .new-sigc++
 
 %build
 #gw work around compiler bug according to the home page:
