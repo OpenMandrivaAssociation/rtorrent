@@ -3,7 +3,7 @@
 #fixed2
 %{?!mkrel:%define mkrel(c:) %{-c: 0.%{-c*}.}%{!?_with_unstable:%(perl -e '$_="%{1}";m/(.\*\\D\+)?(\\d+)$/;$rel=${2}-1;re;print "$1$rel";').%{?subrel:%subrel}%{!?subrel:1}.%{?distversion:%distversion}%{?!distversion:%(echo $[%{mdkversion}/10])}}%{?_with_unstable:%{1}}%{?distsuffix:%distsuffix}%{?!distsuffix:mdk}}
 Name: rtorrent
-Version: 0.7.8
+Version: 0.7.9
 Release: %release
 Epoch: 1
 Summary: Curses based BitTorrent client
@@ -11,15 +11,14 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-build
 License: GPL
 Group: Networking/File transfer
 URL: http://libtorrent.rakshasa.no/
-Source0: http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.bz2 
-Patch: rtorrent-0.7.7-new-sigc++.patch
+Source0: http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
 Requires: libtorrent >= %libtorrentver
 BuildRequires: libtorrent-devel >= %libtorrentver
 BuildRequires: libcurl-devel >= 7.12.0
 BuildRequires: libncursesw-devel
 BuildRequires: docbook-utils
 BuildRequires: docbook-dtd41-sgml
-BuildRequires: automake1.8 libtool
+BuildRequires: automake libtool
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -27,7 +26,6 @@ libtorrent.
 
 %prep
 %setup -q
-%patch -p1 -b .new-sigc++
 
 %build
 #gw work around compiler bug according to the home page:
@@ -52,5 +50,3 @@ db2html faq.xml
 %doc README AUTHORS TODO doc/faq doc/rtorrent.rc
 %{_bindir}/rtorrent
 %_mandir/man1/rtorrent.1*
-
-
