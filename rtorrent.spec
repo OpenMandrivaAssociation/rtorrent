@@ -7,6 +7,7 @@ Version: 0.7.9
 Release: %release
 Epoch: 1
 Summary: Curses based BitTorrent client
+BuildRoot: %{_tmppath}/%{name}-%{version}-build
 License: GPL
 Group: Networking/File transfer
 URL: http://libtorrent.rakshasa.no/
