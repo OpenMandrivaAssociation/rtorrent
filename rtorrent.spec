@@ -24,6 +24,7 @@ BuildRequires: libncursesw-devel
 BuildRequires: docbook-utils
 BuildRequires: docbook-dtd41-sgml
 BuildRequires: automake libtool
+BuildRequires: xmlrpc-c-devel
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -43,7 +44,9 @@ export CFLAGS=$(echo %optflags|sed s/O2/O3/)
 export CXXFLAGS=$(echo %optflags|sed s/O2/O3/)
 #gw add flags for the ncursesw headers
 export CPPFLAGS=-I%_includedir/ncursesw
-%configure2_5x
+# don't use --as-needed - it make build fail on x86_64
+%define ldflags -Wl,--no-undefined
+%configure2_5x --with-xmlrpc-c
 %make
 cd doc
 db2html faq.xml
