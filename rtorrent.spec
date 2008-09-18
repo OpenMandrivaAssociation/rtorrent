@@ -1,8 +1,8 @@
-%define libtorrentver 0.12.2
-%define release %mkrel 4
+%define libtorrentver 0.12.3
+%define release %mkrel 1
 
 Name: rtorrent
-Version: 0.8.2
+Version: 0.8.3
 Release: %release
 Epoch: 1
 Summary: Curses based BitTorrent client
@@ -11,12 +11,6 @@ License: GPLv2+
 Group: Networking/File transfer
 URL: http://libtorrent.rakshasa.no/
 Source0: http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
-#gw patches from Gentoo
-Patch: libtorrent-0.12.2-fix_start_stop_filter.patch
-Patch1: rtorrent-0.8.2-gcc4.3.patch
-Patch2: rtorrent-0.8.2-fix_conn_type_seed.patch
-Patch3: rtorrent-0.8.2-fix_load_cache.patch
-Patch4: rtorrent-0.8.2-fix_utf8_filenames.patch
 Requires: libtorrent >= %libtorrentver
 BuildRequires: libtorrent-devel >= %libtorrentver
 BuildRequires: libcurl-devel >= 7.12.0
@@ -32,11 +26,6 @@ libtorrent.
 
 %prep
 %setup -q
-%patch -p1
-%patch1 -p1 -b .gcc4.3
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 #gw work around compiler bug according to the home page:
