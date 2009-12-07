@@ -1,8 +1,8 @@
-%define libtorrentver 0.12.5
+%define libtorrentver 0.12.6
 %define release %mkrel 1
 
 Name: rtorrent
-Version: 0.8.5
+Version: 0.8.6
 Release: %release
 Epoch: 1
 Summary: Curses based BitTorrent client
@@ -11,7 +11,6 @@ License: GPLv2+
 Group: Networking/File transfer
 URL: http://libtorrent.rakshasa.no/
 Source0: http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
-Patch: rtorrent-0.8.5-fix-format-string.patch
 Requires: libtorrent >= %libtorrentver
 BuildRequires: libtorrent-devel >= %libtorrentver
 BuildRequires: libcurl-devel >= 7.12.0
@@ -27,7 +26,6 @@ libtorrent.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 #gw work around compiler bug according to the home page:
