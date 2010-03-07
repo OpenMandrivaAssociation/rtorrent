@@ -1,24 +1,24 @@
-%define libtorrentver 0.12.6
-%define release %mkrel 1
+%define	libtorrentver	0.12.6
+%define	release	%mkrel	1
 
-Name: rtorrent
-Version: 0.8.6
-Release: %release
-Epoch: 1
-Summary: Curses based BitTorrent client
-BuildRoot: %{_tmppath}/%{name}-%{version}-build
-License: GPLv2+
-Group: Networking/File transfer
-URL: http://libtorrent.rakshasa.no/
-Source0: http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
-Requires: libtorrent >= %libtorrentver
-BuildRequires: libtorrent-devel >= %libtorrentver
-BuildRequires: libcurl-devel >= 7.12.0
-BuildRequires: libncursesw-devel
-BuildRequires: docbook-utils
-BuildRequires: docbook-dtd41-sgml
-BuildRequires: automake libtool
-BuildRequires: xmlrpc-c-devel
+Name:		rtorrent
+Version:	0.8.6
+Release:	%release
+Epoch:		1
+Summary:	Curses based BitTorrent client
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
+License:	GPLv2+
+Group:		Networking/File transfer
+URL:		http://libtorrent.rakshasa.no/
+Source0:	http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
+Requires:	libtorrent >= %libtorrentver
+BuildRequires:	libtorrent-devel >= %libtorrentver
+BuildRequires:	libcurl-devel >= 7.12.0
+BuildRequires:	libncursesw-devel
+BuildRequires:	docbook-utils
+BuildRequires:	docbook-dtd41-sgml
+BuildRequires:	automake libtool
+BuildRequires:	xmlrpc-c-devel
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -41,11 +41,11 @@ cd doc
 db2html faq.xml
 
 %install 
-[ "$RPM_BUILD_ROOT" != "/" ] && [ -d $RPM_BUILD_ROOT ] && rm -rf $RPM_BUILD_ROOT;
+rm -rf $RPM_BUILD_ROOT;
 %makeinstall_std
   
 %clean
-[ "$RPM_BUILD_ROOT" != "/" ] && [ -d $RPM_BUILD_ROOT ] && rm -rf $RPM_BUILD_ROOT;
+rm -rf $RPM_BUILD_ROOT;
 
 %files
 %defattr(-,root,root)
