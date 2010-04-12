@@ -1,5 +1,5 @@
 %define	libtorrentver	0.12.6
-%define	release	%mkrel	2
+%define	release	%mkrel	3
 
 Name:		rtorrent
 Version:	0.8.6
@@ -33,8 +33,6 @@ export CFLAGS=$(echo %optflags|sed s/O2/O3/)
 export CXXFLAGS=$(echo %optflags|sed s/O2/O3/)
 #gw add flags for the ncursesw headers
 export CPPFLAGS=-I%_includedir/ncursesw
-# don't use --as-needed - it make build fail on x86_64
-%define ldflags -Wl,--no-undefined
 %configure2_5x --with-xmlrpc-c
 %make
 cd doc
