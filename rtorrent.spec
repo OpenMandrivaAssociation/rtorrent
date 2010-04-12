@@ -1,5 +1,5 @@
 %define	libtorrentver	0.12.6
-%define	release	%mkrel	1
+%define	release	%mkrel	2
 
 Name:		rtorrent
 Version:	0.8.6
