@@ -1,8 +1,8 @@
-%define	libtorrentver	0.12.6
-%define	release	%mkrel	3
+%define	libtorrentver	0.12.7
+%define	release	%mkrel	1
 
 Name:		rtorrent
-Version:	0.8.6
+Version:	0.8.7
 Release:	%release
 Epoch:		1
 Summary:	Curses based BitTorrent client
@@ -41,7 +41,7 @@ db2html faq.xml
 %install 
 rm -rf $RPM_BUILD_ROOT;
 %makeinstall_std
-  
+
 %clean
 rm -rf $RPM_BUILD_ROOT;
 
@@ -49,4 +49,5 @@ rm -rf $RPM_BUILD_ROOT;
 %defattr(-,root,root)
 %doc README AUTHORS TODO doc/faq doc/rtorrent.rc
 %{_bindir}/rtorrent
-%_mandir/man1/rtorrent.1*
+#gw it was outdated:
+#%_mandir/man1/rtorrent.1*
