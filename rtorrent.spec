@@ -20,7 +20,6 @@ BuildRequires:	libcurl-devel >= 7.12.0
 BuildRequires:	libncursesw-devel
 BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd41-sgml
-BuildRequires:	automake libtool
 BuildRequires:	xmlrpc-c-devel
 
 %description
@@ -35,8 +34,14 @@ libtorrent.
 #gw work around compiler bug according to the home page:
 export CFLAGS=$(echo %optflags|sed s/O2/O3/)
 export CXXFLAGS=$(echo %optflags|sed s/O2/O3/)
+
 #gw add flags for the ncursesw headers
 export CPPFLAGS=-I%_includedir/ncursesw
+
+#add hack to fix build on BS, for some reason build fails with iurt on x86_64 without this,
+#local build on BS works without this hack, though (wally 03/2010)
+export LIBS="-lxmlrpc -lxmlrpc_util"
+
 %configure2_5x --with-xmlrpc-c
 %make
 cd doc
