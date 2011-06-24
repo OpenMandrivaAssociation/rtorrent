@@ -1,8 +1,8 @@
-%define	libtorrentver	0.12.8
+%define	libtorrentver	0.12.9
 %define	release	%mkrel	1
 
 Name:		rtorrent
-Version:	0.8.8
+Version:	0.8.9
 Release:	%release
 Epoch:		1
 Summary:	Curses based BitTorrent client
