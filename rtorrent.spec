@@ -1,8 +1,8 @@
-%define	libtorrentver	0.12.9
+%define	libtorrentver	0.13.0
 %define	release	%mkrel	1
 
 Name:		rtorrent
-Version:	0.8.9
+Version:	0.9.0
 Release:	%release
 Epoch:		1
 Summary:	Curses based BitTorrent client
@@ -18,6 +18,7 @@ BuildRequires:	libncursesw-devel
 BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	xmlrpc-c-devel
+BuildRequires:  cppunit-devel
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -36,7 +37,8 @@ export CPPFLAGS=-I%_includedir/ncursesw
 
 #add hack to fix build on BS, for some reason build fails with iurt on x86_64 without this,
 #local build on BS works without this hack, though (wally 03/2010)
-export LIBS="-lxmlrpc -lxmlrpc_util"
+export LIBS="-lxmlrpc -lxmlrpc_util -lpthread"
+
 
 %configure2_5x --with-xmlrpc-c
 %make
@@ -52,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT;
 
 %files
 %defattr(-,root,root)
-%doc README AUTHORS TODO doc/faq doc/rtorrent.rc
+%doc README AUTHORS doc/faq doc/rtorrent.rc
 %{_bindir}/rtorrent
 #gw it was outdated:
 #%_mandir/man1/rtorrent.1*
