@@ -14,7 +14,7 @@ Source0:	http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
 Requires:	libtorrent >= %libtorrentver
 BuildRequires:	libtorrent-devel >= %libtorrentver
 BuildRequires:	libcurl-devel >= 7.12.0
-BuildRequires:	libncursesw-devel
+BuildRequires:	ncursesw-devel
 BuildRequires:	docbook-utils
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	xmlrpc-c-devel
