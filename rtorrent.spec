@@ -1,4 +1,4 @@
-%define	libtorrentver	0.13.0
+%define	libtorrentver	0.13.1
 %define	release	%mkrel	1
 
 Name:		rtorrent
