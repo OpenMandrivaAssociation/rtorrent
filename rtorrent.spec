@@ -2,7 +2,7 @@
 %define	release	%mkrel	1
 
 Name:		rtorrent
-Version:	0.9.1
+Version:	0.9.2
 Release:	%release
 Epoch:		1
 Summary:	Curses based BitTorrent client
