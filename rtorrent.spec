@@ -1,9 +1,8 @@
 %define	libtorrentver	0.13.3
-%define	release	1
 
 Name:		rtorrent
 Version:	0.9.3
-Release:	%{release}
+Release:	1
 Epoch:		1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
