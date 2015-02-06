@@ -2,7 +2,7 @@
 
 Name:		rtorrent
 Version:	0.9.3
-Release:	1
+Release:	2
 Epoch:		1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
