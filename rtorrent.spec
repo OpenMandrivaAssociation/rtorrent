@@ -1,14 +1,14 @@
 %define	libtorrentver	0.13.3
 
 Name:		rtorrent
-Version:	0.9.3
-Release:	2
+Version:	0.9.4
+Release:	1
 Epoch:		1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
 Group:		Networking/File transfer
 URL:		http://libtorrent.rakshasa.no/
-Source0:	http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
+Source0:	http://libtorrent.rakshasa.no/downloads/%{name}-%{version}.tar.gz
 
 BuildRequires:	pkgconfig(libtorrent) >= %{libtorrentver}
 BuildRequires:	pkgconfig(libcurl)
@@ -40,5 +40,3 @@ export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 %files
 %doc README AUTHORS doc/rtorrent.rc
 %{_bindir}/rtorrent
-
-
