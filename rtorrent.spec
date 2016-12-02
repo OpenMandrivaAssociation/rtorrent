@@ -1,22 +1,21 @@
-%define	libtorrentver	0.13.3
+%define	libtorrentver	0.13.6
 
 Name:		rtorrent
-Version:	0.9.3
-Release:	2
+Version:	0.9.6
+Release:	1
 Epoch:		1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
 Group:		Networking/File transfer
-URL:		http://libtorrent.rakshasa.no/
-Source0:	http://libtorrent.rakshasa.no/downloads/%name-%{version}.tar.gz
+URL:		https://rakshasa.github.io/rtorrent/
+Source0:	http://rtorrent.net/downloads/%name-%{version}.tar.gz
 
 BuildRequires:	pkgconfig(libtorrent) >= %{libtorrentver}
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(ncursesw)
 BuildRequires:	pkgconfig(xmlrpc)
 BuildRequires:	pkgconfig(sigc++-2.0)
-
-Requires:	libtorrent >= %{libtorrentver}
+BuildRequires:	pkgconfig(cppunit)
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -26,10 +25,11 @@ libtorrent.
 %setup -q
 
 %build
+autoreconf -fiv
 export CPPFLAGS=-I%{_includedir}/ncursesw
 export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 
-%configure2_5x --with-xmlrpc-c
+%configure --with-xmlrpc-c
 %make
 
 
@@ -40,5 +40,3 @@ export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 %files
 %doc README AUTHORS doc/rtorrent.rc
 %{_bindir}/rtorrent
-
-
