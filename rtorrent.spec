@@ -1,7 +1,7 @@
-%define	libtorrentver	0.13.6
+%define	libtorrentver	0.13.7
 
 Name:		rtorrent
-Version:	0.9.6
+Version:	0.9.7
 Release:	1
 Epoch:		1
 Summary:	Curses based BitTorrent client
