@@ -26,7 +26,7 @@ libtorrent.
 %autosetup -p1
 
 %build
-#autoreconf -fiv
+autoreconf -fiv
 #export CPPFLAGS=-I%{_includedir}/ncursesw
 #export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 
