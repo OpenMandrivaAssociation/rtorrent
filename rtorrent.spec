@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(ncursesw)
 BuildRequires:	pkgconfig(xmlrpc)
 BuildRequires:	pkgconfig(sigc++-2.0)
 BuildRequires:	pkgconfig(cppunit)
+BuildRequires:      pkgconf = 2.3.0
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -26,7 +27,7 @@ libtorrent.
 %autosetup -p1
 
 %build
-autoreconf -fiv
+#autoreconf -fiv
 #export CPPFLAGS=-I%{_includedir}/ncursesw
 #export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 
