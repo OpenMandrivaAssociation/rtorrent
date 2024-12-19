@@ -26,11 +26,13 @@ libtorrent.
 %autosetup -p1
 
 %build
-autoreconf -fiv
-export CPPFLAGS=-I%{_includedir}/ncursesw
-export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
+#autoreconf -fiv
+#export CPPFLAGS=-I%{_includedir}/ncursesw
+#export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 
-%configure --with-xmlrpc-c
+%configure \
+          --enable-ipv6 \
+          --with-xmlrpc-c
 %make_build
 
 %install 
