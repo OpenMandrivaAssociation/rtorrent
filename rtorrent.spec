@@ -1,7 +1,7 @@
-%define	libtorrentver	0.14.0
+%define	libtorrentver	0.15.0
 
 Name:		rtorrent
-Version:	0.10.0
+Version:	0.15.0
 Release:	1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
@@ -14,7 +14,9 @@ Source0:  https://github.com/rakshasa/rtorrent/releases/download/v%{version}/rto
 BuildRequires:	pkgconfig(libtorrent) >= %{libtorrentver}
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(ncursesw)
-BuildRequires:	pkgconfig(xmlrpc)
+# Replaced by faster tintyxml2
+#BuildRequires:	pkgconfig(xmlrpc)
+BuildRequires:      pkgconfig(tinyxml2)
 BuildRequires:	pkgconfig(sigc++-2.0)
 BuildRequires:	pkgconfig(cppunit)
 BuildRequires:      autoconf autoconf-archive libtool
@@ -33,7 +35,7 @@ autoreconf -fiv
 
 %configure \
           --enable-ipv6 \
-          --with-xmlrpc-c
+          --with-xmlrpc-tinyxml2
 %make_build
 
 %install 
