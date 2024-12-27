@@ -10,16 +10,17 @@ URL:		https://rakshasa.github.io/rtorrent/
 Patch0:		rtorrent-0.9.8_color.patch
 #Source0:	http://rtorrent.net/downloads/%name-%{version}.tar.gz
 Source0:  https://github.com/rakshasa/rtorrent/releases/download/v%{version}/rtorrent-%{version}.tar.gz
+Patch0:          https://github.com/rakshasa/rtorrent/pull/1354.patch
 
-BuildRequires:	pkgconfig(libtorrent) >= %{libtorrentver}
-BuildRequires:	pkgconfig(libcurl)
-BuildRequires:	pkgconfig(ncursesw)
+BuildRequires: pkgconfig(libtorrent) >= %{libtorrentver}
+BuildRequires: pkgconfig(libcurl)
+BuildRequires: pkgconfig(ncursesw)
 # Replaced by faster tintyxml2
-#BuildRequires:	pkgconfig(xmlrpc)
-BuildRequires:      pkgconfig(tinyxml2)
-BuildRequires:	pkgconfig(sigc++-2.0)
-BuildRequires:	pkgconfig(cppunit)
-BuildRequires:      autoconf autoconf-archive libtool
+#BuildRequires: pkgconfig(xmlrpc)
+BuildRequires: pkgconfig(tinyxml2)
+BuildRequires: pkgconfig(sigc++-2.0)
+BuildRequires: pkgconfig(cppunit)
+BuildRequires: autoconf autoconf-archive libtool
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
