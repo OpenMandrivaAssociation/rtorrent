@@ -7,10 +7,10 @@ Summary:	Curses based BitTorrent client
 License:	GPLv2+
 Group:		Networking/File transfer
 URL:		https://rakshasa.github.io/rtorrent/
-Patch0:		rtorrent-0.9.8_color.patch
 #Source0:	http://rtorrent.net/downloads/%name-%{version}.tar.gz
 Source0:  https://github.com/rakshasa/rtorrent/releases/download/v%{version}/rtorrent-%{version}.tar.gz
-Patch0:          https://github.com/rakshasa/rtorrent/pull/1354.patch
+Patch0:		rtorrent-0.9.8_color.patch
+Patch1:          https://github.com/rakshasa/rtorrent/pull/1354.patch
 
 BuildRequires: pkgconfig(libtorrent) >= %{libtorrentver}
 BuildRequires: pkgconfig(libcurl)
