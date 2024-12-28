@@ -32,7 +32,7 @@ libtorrent.
 %build
 export CC=gcc
 export CXX=g++
-autoreconf -fiv
+#autoreconf -fiv
 #export CPPFLAGS=-I%{_includedir}/ncursesw
 #export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 
