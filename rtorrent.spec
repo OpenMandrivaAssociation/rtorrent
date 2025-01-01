@@ -1,4 +1,4 @@
-%define	libtorrentver	0.15.0
+%define	libtorrentver	0.15.1
 
 Name:		rtorrent
 Version:	0.15.1
