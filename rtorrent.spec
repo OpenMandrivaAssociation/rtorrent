@@ -44,5 +44,5 @@ export CXX=g++
 %make_install
 
 %files
-%doc README AUTHORS doc/rtorrent.rc
+%doc README* AUTHORS doc/rtorrent.rc
 %{_bindir}/rtorrent
