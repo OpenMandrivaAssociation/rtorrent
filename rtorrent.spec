@@ -46,3 +46,4 @@ export CXX=g++
 %files
 %doc README* AUTHORS doc/rtorrent.rc
 %{_bindir}/rtorrent
+%{_datadir}/rtorrent/lua/rtorrent.lua
