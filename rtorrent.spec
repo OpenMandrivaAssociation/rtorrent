@@ -1,4 +1,4 @@
-%define	libtorrentver	0.16.2
+%define	libtorrentver	0.16.4
 
 Name:		rtorrent
 Version:	0.16.4
