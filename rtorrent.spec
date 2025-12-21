@@ -11,6 +11,10 @@ URL:		https://rakshasa.github.io/rtorrent/
 Source0:  https://github.com/rakshasa/rtorrent/releases/download/v%{version}/rtorrent-%{version}.tar.gz
 #Patch0:		rtorrent-0.9.8_color.patch
 
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: pkgconfig(libtorrent) >= %{libtorrentver}
 BuildRequires: pkgconfig(libcurl)
 BuildRequires: pkgconfig(ncursesw)
