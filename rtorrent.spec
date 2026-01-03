@@ -1,7 +1,7 @@
-%define	libtorrentver	0.16.4
+%define	libtorrentver	0.16.6
 
 Name:		rtorrent
-Version:	0.16.5
+Version:	0.16.6
 Release:	1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
@@ -11,10 +11,10 @@ URL:		https://rakshasa.github.io/rtorrent/
 Source0:  https://github.com/rakshasa/rtorrent/releases/download/v%{version}/rtorrent-%{version}.tar.gz
 #Patch0:		rtorrent-0.9.8_color.patch
 
-BuildRequires:	automake
-BuildRequires:	libtool-base
-BuildRequires:	slibtool
-BuildRequires:	make
+BuildRequires: automake
+BuildRequires: libtool-base
+BuildRequires: slibtool
+BuildRequires: make
 BuildRequires: pkgconfig(libtorrent) >= %{libtorrentver}
 BuildRequires: pkgconfig(libcurl)
 BuildRequires: pkgconfig(ncursesw)
