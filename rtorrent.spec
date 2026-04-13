@@ -33,8 +33,9 @@ libtorrent.
 %autosetup -p1
 
 %build
-export AR=ar
+export AR=/usr/bin/ar
 export ARFLAGS=cr
+export RANLIB=/usr/bin/ranlib
 export CC=gcc
 export CXX=g++
 #autoreconf -fiv
