@@ -2,7 +2,7 @@
 
 Name:		rtorrent
 Version:	0.16.9
-Release:	1
+Release:	2
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
 Group:		Networking/File transfer
@@ -12,7 +12,6 @@ Source0:  https://github.com/rakshasa/rtorrent/releases/download/v%{version}/rto
 #Patch0:		rtorrent-0.9.8_color.patch
 
 BuildRequires: automake
-BuildRequires: libtool-base
 BuildRequires: slibtool
 BuildRequires: make
 BuildRequires: pkgconfig(libtorrent) >= %{libtorrentver}
@@ -23,7 +22,7 @@ BuildRequires: pkgconfig(ncursesw)
 BuildRequires: pkgconfig(tinyxml2)
 BuildRequires: pkgconfig(sigc++-2.0)
 BuildRequires: pkgconfig(cppunit)
-BuildRequires: autoconf autoconf-archive libtool
+BuildRequires: autoconf autoconf-archive
 
 %description
 This is a text mode BitTorrent client with a curses interface based on 
@@ -33,16 +32,8 @@ libtorrent.
 %autosetup -p1
 
 %build
-export AR=/usr/bin/ar
-export ARFLAGS=cr
-export RANLIB=/usr/bin/ranlib
-export CC=gcc
-export CXX=g++
-#autoreconf -fiv
-#export CPPFLAGS=-I%{_includedir}/ncursesw
-#export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
-
-%configure AR=ar \
+%configure AR=llvm-ar \
+           RANLIB=llvm-ranlib \
           --enable-ipv6 \
           --with-xmlrpc-tinyxml2
 %make_build
