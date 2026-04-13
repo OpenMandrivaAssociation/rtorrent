@@ -39,7 +39,7 @@ export CXX=g++
 #export CPPFLAGS=-I%{_includedir}/ncursesw
 #export LIBS="-lpthread -lxmlrpc -lxmlrpc_util"
 
-%configure \
+%configure AR=ar \
           --enable-ipv6 \
           --with-xmlrpc-tinyxml2
 %make_build
