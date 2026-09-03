@@ -1,7 +1,7 @@
-%define	libtorrentver	0.16.20
+%define	libtorrentver	0.16.22
 
 Name:		rtorrent
-Version:	0.16.21
+Version:	0.16.22
 Release:	1
 Summary:	Curses based BitTorrent client
 License:	GPLv2+
